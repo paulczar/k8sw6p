@@ -26,8 +26,11 @@
 
     git clone https://github.com/paulczar/pksw6p.git
 
-
     cd pks-workshop
+
+    export USERNAME=<username>
+
+    export TILLER_NAMESPACE=<username>
 
 ------
 # STOP HERE and wait for workshop
@@ -39,7 +42,7 @@ Build and run the Hello world app
 
     cd hello
 
-    docker build -t paulczar/hello .
+    docker build -t paulczar/hello -f Dockerfile.cp .
 
     docker run --name hello -d -p 8080:8080 paulczar/hello
 
@@ -134,8 +137,6 @@ docker-compose stop
 
     mkdir ../helm
     cd ../helm
-
-    export HELM_NAMESPACE=<username>
 
     helm create hello
     cd hello
