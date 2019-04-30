@@ -29,6 +29,10 @@
 
     cd pks-workshop
 
+------
+# STOP HERE and wait for workshop
+------
+
 ## docker
 
 Build and run the Hello world app
