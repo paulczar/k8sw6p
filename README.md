@@ -135,10 +135,28 @@ docker-compose stop
     kubectl delete configmap hello
     kubectl delete secret hello
 
+## Kube with manifests
+
+    kubectl apply -f deploy
+
+    kubectl port-forward deployment/hello 8080
+
+    curl localhost:8080
+
+    kubectl edit configmap hello
+
+    curl localhost:8080
+
+    kubectl delete -f deploy
+
 ## Helm
 
     mkdir ../helm
     cd ../helm
+
+    helm version
+
+### Helm Hello
 
     helm create hello
     cd hello

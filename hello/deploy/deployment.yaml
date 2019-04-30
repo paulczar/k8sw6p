@@ -22,26 +22,19 @@ spec:
               fieldRef:
                 fieldPath: metadata.namespace
         image: paulczar/spring-hello:0.0.1
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         name: hello
         ports:
           - name: http
             containerPort: 8080
-          - name: actuator
-            containerPort: 8081
         resources:
           limits:
             cpu: 500m
-            memory: 256Mi
+            memory: 512Mi
           requests:
             cpu: 500m
-            memory: 256Mi
-        livenessProbe:
-          httpGet:
-            path: /actuator/health
-            port: actuator
-          initialDelaySeconds: 60
+            memory: 512Mi
         readinessProbe:
           httpGet:
             path: /actuator/health
-            port: actuator
+            port: http
