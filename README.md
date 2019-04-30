@@ -28,7 +28,7 @@
 
     cd pks-workshop
 
-    export USERNAME=<username>
+    export K8S_USER=<username>
 
     export TILLER_NAMESPACE=<username>
 
@@ -42,9 +42,9 @@ Build and run the Hello world app
 
     cd hello
 
-    docker build -t paulczar/hello -f Dockerfile.cp .
+    docker build -t $K8S_USER/hello -f Dockerfile.cp .
 
-    docker run --name hello -d -p 8080:8080 paulczar/hello
+    docker run --name hello -d -p 8080:8080 $K8S_USER/hello
 
 Have a look at what Containers are running:
 
