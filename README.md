@@ -24,7 +24,7 @@
 
 ### Download example applications
 
-    git clone https://github.com/paulczar/pks-workshop.git
+    git clone https://github.com/paulczar/pksw6p.git
 
 
     cd pks-workshop
@@ -109,7 +109,6 @@ docker-compose stop
       hello --type=LoadBalancer \
       --port 80 --target-port 8080
 
-
 ### ConfigMaps and Secrets
 
     kubectl create configmap hello \
@@ -131,6 +130,8 @@ docker-compose stop
 
     mkdir ../helm
     cd ../helm
+
+    export HELM_NAMESPACE=<username>
 
     helm create hello
     cd hello
@@ -165,8 +166,8 @@ helm install --name dev --set message="Hello Development" .
 
 helm install --name prod --set message="Hello Production" .
 
-kubectl port-forward deployment/prod-hello-world 8080:8080
-kubectl port-forward deployment/dev-hello-world 8081:8080
+kubectl port-forward deployment/prod-hello 8080:8080
+kubectl port-forward deployment/dev-hello 8081:8080
 
 curl localhost:8080
 

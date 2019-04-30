@@ -10,6 +10,7 @@ sink:
   replicaCount: 1
   config: |-
     # config settings loaded from values
+    management.metrics.tags.application=scst-sink
 
 source:
   image:
@@ -19,6 +20,7 @@ source:
   replicaCount: 1
   config: |-
     # config settings loaded from values
+    management.metrics.tags.application=scst-source
 processor:
   image:
     repository: paulczar/scst-processor
@@ -27,6 +29,7 @@ processor:
   replicaCount: 1
   config: |-
     # config settings loaded from values
+    management.metrics.tags.application=scst-processor
 
 prometheus:
   enabled: true
