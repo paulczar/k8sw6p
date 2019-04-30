@@ -16,6 +16,8 @@
 
 * Log into Harbor Registry by going to https://harbor.workshop.paulczar.wtf/
 
+* Create a project for your username in harbor here - https://harbor.workshop.paulczar.wtf/harbor/projects
+
 * Log Docker into Harbor by running:  `$ docker login harbor.workshop.paulczar.wtf` and follow the prompts.
 
 * Verify Kubernetes is working:  `$ kubectl version` you should see both a local and server version.
